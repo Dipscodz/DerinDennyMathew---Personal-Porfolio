@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Account for fixed header
@@ -61,4 +61,27 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('fade-in-section');
         observer.observe(section);
     });
+    // Contact Form Handler
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Simulate form submission
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+            btn.style.background = 'var(--accent-secondary)';
+
+            // Show alert
+            alert('Thank you for your message! This is a demo form. Please email me directly at derindennymathew@gmail.com.');
+
+            // Reset after 3 seconds
+            setTimeout(() => {
+                contactForm.reset();
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 3000);
+        });
+    }
 });
