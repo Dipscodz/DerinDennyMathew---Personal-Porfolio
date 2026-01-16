@@ -61,12 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('fade-in-section');
         observer.observe(section);
     });
+
     // Contact Form Handler
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Simulate form submission
+
+            // Get values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const date = new Date().toLocaleString();
+
+            // Create message object
+            const newMessage = { name, email, subject, message, date };
+
+            // Save to localStorage
+            let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+            messages.unshift(newMessage); // Add to beginning
+            localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+            // UI Feedback
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerHTML;
 
@@ -74,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.style.background = 'var(--accent-secondary)';
 
             // Show alert
-            alert('Thank you for your message! This is a demo form. Please email me directly at derindennymathew@gmail.com.');
+            alert('Message sent successfully! You can view it on the Messages page.');
 
             // Reset after 3 seconds
             setTimeout(() => {
