@@ -84,53 +84,93 @@
     </nav>
 
     <div class="messages-container">
-        <div class="actions">
-            <h1>Inquiry Messages</h1>
-            <button id="clear-messages" class="btn btn-secondary btn-sm"><i class="fas fa-trash"></i> Clear All</button>
+        <!-- Login Section -->
+        <div id="login-section" style="text-align: center; padding: 2rem;">
+            <h2><i class="fas fa-lock"></i> Admin Access</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Please enter the password to view inquiries.
+            </p>
+            <div class="form-group" style="max-width: 300px; margin: 0 auto 1rem;">
+                <input type="password" id="password-input" placeholder="Enter Password"
+                    onkeyup="if(event.key === 'Enter') checkPassword()">
+            </div>
+            <button onclick="checkPassword()" class="btn btn-primary">Unlock</button>
+            <p id="error-msg" style="color: #ef4444; margin-top: 1rem; display: none;">Incorrect password!</p>
         </div>
-        <div id="messages-list">
-            <!-- Messages will be loaded here -->
+
+        <!-- Messages Section (Hidden by default) -->
+        <div id="messages-section" style="display: none;">
+            <div class="actions">
+                <h1>Inquiry Messages</h1>
+                <button id="clear-messages" class="btn btn-secondary btn-sm"><i class="fas fa-trash"></i> Clear
+                    All</button>
+            </div>
+            <div id="messages-list">
+                <!-- Messages will be loaded here -->
+            </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const messagesList = document.getElementById('messages-list');
-            const clearBtn = document.getElementById('clear-messages');
+            // Check if already authenticated in this session
+            if (sessionStorage.getItem('adminAuth') === 'true') {
+                showMessages();
+            }
+        });
 
-            function loadMessages() {
-                const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+        function checkPassword() {
+            const password = document.getElementById('password-input').value;
+            const errorMsg = document.getElementById('error-msg');
 
-                if (messages.length === 0) {
-                    messagesList.innerHTML = `
-                        <div class="empty-state">
-                            <i class="fas fa-inbox fa-3x" style="margin-bottom: 1rem; opacity: 0.5;"></i>
-                            <p>No messages found.</p>
-                        </div>
-                    `;
-                    return;
-                }
+            // Hardcoded password for demo purposes 'admin123'
+            if (password === 'admin123') {
+                sessionStorage.setItem('adminAuth', 'true');
+                showMessages();
+            } else {
+                errorMsg.style.display = 'block';
+                document.getElementById('password-input').value = '';
+            }
+        }
 
-                messagesList.innerHTML = messages.map(msg => `
-                    <div class="message-card">
-                        <div class="meta">
-                            <span class="sender">${msg.name} (${msg.email})</span>
-                            <span class="date">${msg.date}</span>
-                        </div>
-                        <div class="subject">${msg.subject}</div>
-                        <div class="body">${msg.message}</div>
+        function showMessages() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('messages-section').style.display = 'block';
+            loadMessages();
+        }
+
+        const messagesList = document.getElementById('messages-list');
+        const clearBtn = document.getElementById('clear-messages');
+
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+
+            if (messages.length === 0) {
+                messagesList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-inbox fa-3x" style="margin-bottom: 1rem; opacity: 0.5;"></i>
+                        <p>No messages found.</p>
                     </div>
-                `).join('');
+                `;
+                return;
             }
 
-            clearBtn.addEventListener('click', () => {
-                if (confirm('Are you sure you want to delete all messages?')) {
-                    localStorage.removeItem('contactMessages');
-                    loadMessages();
-                }
-            });
+            messagesList.innerHTML = messages.map(msg => `
+                <div class="message-card">
+                    <div class="meta">
+                        <span class="sender">${msg.name} (${msg.email})</span>
+                        <span class="date">${msg.date}</span>
+                    </div>
+                    <div class="subject">${msg.subject}</div>
+                    <div class="body">${msg.message}</div>
+                </div>
+            `).join('');
+        }
 
-            loadMessages();
+        clearBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to delete all messages?')) {
+                localStorage.removeItem('contactMessages');
+                loadMessages();
+            }
         });
     </script>
 </body>

@@ -1,22 +1,22 @@
-/* Global Reset & Variables */
+
 :root {
     --bg-color: #020617;
-    /* Midnight Slate */
+ 
     --card-bg: #1e293b;
-    /* Slate 800 */
+
     --text-primary: #f8fafc;
-    /* Slate 50 */
+
     --text-secondary: #94a3b8;
-    /* Slate 400 */
+
     --accent-primary: #38bdf8;
-    /* Sky Blue */
+
     --accent-secondary: #818cf8;
-    /* Indigo */
+
     --gradient-main: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     --transition: all 0.3s ease;
     --glass-bg: rgba(2, 6, 23, 0.85);
     --border-color: #334155;
-    /* Slate 700 */
+ 
 }
 
 * {
@@ -293,7 +293,7 @@ ul {
     color: var(--text-primary);
 }
 
-/* Skills Section */
+
 .skills {
     padding: 6rem 0;
 }
@@ -416,7 +416,6 @@ ul {
     border-radius: 20px;
 }
 
-/* Research Section */
 .research {
     padding: 6rem 0;
 }
@@ -652,14 +651,14 @@ button,
     color: #10b981;
 }
 
-/* Green */
+
 .down {
     color: #ef4444;
 }
 
-/* Red */
 
-/* Trading Chart Animation */
+
+
 .trading-chart-container {
     display: flex;
     align-items: flex-end;
@@ -700,11 +699,11 @@ button,
     }
 }
 
-/* Mobile Responsive */
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        /* Add JS toggle later */
+        
         position: absolute;
         top: 100%;
         left: 0;
