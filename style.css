@@ -25,6 +25,13 @@ html {
     font-size: 16px;
 }
 
+h1,
+h2,
+h3,
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
@@ -531,6 +538,80 @@ footer {
     border-top: 1px solid var(--border-color);
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+/* Trading Ticker */
+.trading-ticker {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ticker-item {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.up {
+    color: #10b981;
+}
+
+/* Green */
+.down {
+    color: #ef4444;
+}
+
+/* Red */
+
+/* Trading Chart Animation */
+.trading-chart-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 100px;
+    margin-top: 2rem;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.chart-bar {
+    width: 20px;
+    background: linear-gradient(to top, var(--accent-primary), var(--accent-secondary));
+    height: var(--h);
+    border-radius: 4px 4px 0 0;
+    animation: fluctuate 2s infinite ease-in-out alternate;
+}
+
+.chart-bar:nth-child(even) {
+    animation-duration: 2.5s;
+    background: linear-gradient(to top, var(--accent-secondary), var(--accent-primary));
+}
+
+.chart-bar:nth-child(3n) {
+    animation-duration: 1.8s;
+}
+
+@keyframes fluctuate {
+    0% {
+        height: calc(var(--h) - 10%);
+        opacity: 0.7;
+    }
+
+    100% {
+        height: calc(var(--h) + 10%);
+        opacity: 1;
+        box-shadow: 0 0 15px var(--accent-primary);
+    }
 }
 
 /* Mobile Responsive */
