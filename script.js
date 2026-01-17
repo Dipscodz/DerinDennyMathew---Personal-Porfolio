@@ -102,3 +102,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorRing = document.querySelector('.cursor-ring');
+
+let mouseX = 0;
+let mouseY = 0;
+let ringX = 0;
+let ringY = 0;
+
+// Mouse move
+window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.left = `${mouseX}px`;
+    cursorDot.style.top = `${mouseY}px`;
+});
+
+// Smooth trailing animation
+function animateCursor() {
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
+
+    cursorRing.style.left = `${ringX}px`;
+    cursorRing.style.top = `${ringY}px`;
+
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+// Hover effects
+const hoverTargets = document.querySelectorAll(
+    'a, button, .btn, .project-card, .skill-card, input, textarea'
+);
+
+hoverTargets.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursorRing.classList.add('cursor-active');
+    });
+
+    el.addEventListener('mouseleave', () => {
+        cursorRing.classList.remove('cursor-active');
+    });
+});
+
+// Hide cursor when leaving window
+document.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+    cursorRing.style.opacity = '0';
+});
+
+document.addEventListener('mouseenter', () => {
+    cursorDot.style.opacity = '1';
+    cursorRing.style.opacity = '1';
+});

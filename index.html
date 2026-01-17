@@ -5,20 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derin Denny Mathew | AI & Software Engineering Student</title>
+
     <meta name="description"
         content="Portfolio of Derin Denny Mathew, an Integrated M.Tech student in Artificial Intelligence and Full-Stack Developer.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- ===== CUSTOM FANCY CURSOR ===== -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <!-- =============================== -->
+
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">Derin<span class="accent">.</span></a>
+
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -27,6 +40,7 @@
                 <a href="#experience">Experience</a>
                 <a href="#contact" class="btn btn-sm">Contact Me</a>
             </div>
+
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,31 +49,43 @@
         </div>
     </nav>
 
+    <!-- HERO -->
     <header class="hero" id="home">
         <div class="container hero-container">
             <div class="hero-content">
+
                 <div class="profile-img-container">
                     <img src="profile.jpg" alt="Derin Denny Mathew" class="profile-img">
                 </div>
+
                 <span class="greeting">Hello, I'm Derin Denny Mathew</span>
+
                 <h1>AI & Software <br><span class="gradient-text">Engineer</span></h1>
+
                 <p class="subtitle">Full-Stack Developer & Problem Solver</p>
+
                 <p class="description">
                     Integrated M.Tech student in Artificial Intelligence with a strong foundation in Python, backend
                     development, and scalable software solutions. Transforming complex logic into clean, efficient code.
                 </p>
+
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> Download Resume</a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
                 </div>
             </div>
         </div>
+
         <div class="hero-background-glow"></div>
     </header>
 
+    <!-- ABOUT -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
+
             <div class="about-content">
                 <div class="about-text">
                     <p>
@@ -68,24 +94,24 @@
                     </p>
                     <p>
                         I am currently strengthening my foundation in data structures, algorithms, and full-stack web
-                        development while actively working on academic and practical projects. I am also involved in
-                        research on aerospace sustainability, which has helped me develop analytical thinking, technical
-                        writing, and a research-oriented mindset.
+                        development while actively working on academic and practical projects.
                     </p>
                     <p>
                         Through consistent learning, internships, and hands-on projects, I am focused on building
-                        industry-relevant skills and preparing myself for software engineering roles where I can
-                        contribute, learn, and grow.
+                        industry-relevant skills and preparing myself for software engineering roles.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">Technical Skills</h2>
+
             <div class="skills-grid">
+
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> Languages</h3>
                     <div class="skill-tags">
@@ -94,6 +120,7 @@
                         <span>JavaScript (Basic)</span>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3><i class="fas fa-server"></i> Web & Backend</h3>
                     <div class="skill-tags">
@@ -104,6 +131,7 @@
                         <span>JWT Auth</span>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3><i class="fas fa-database"></i> Databases</h3>
                     <div class="skill-tags">
@@ -112,6 +140,7 @@
                         <span>MongoDB</span>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3><i class="fas fa-brain"></i> AI & Data</h3>
                     <div class="skill-tags">
@@ -121,6 +150,7 @@
                         <span>Model Training</span>
                     </div>
                 </div>
+
                 <div class="skill-category">
                     <h3><i class="fas fa-tools"></i> Tools</h3>
                     <div class="skill-tags">
@@ -130,21 +160,22 @@
                         <span>LeetCode</span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
+
             <div class="projects-grid">
-                <!-- Project 1 -->
+
                 <article class="project-card">
                     <div class="project-content">
                         <h3>Handwritten Character Interpretation Framework</h3>
-                        <p>Developed a CNN-based system to recognize handwritten characters from images. Implemented
-                            preprocessing, model training, and evaluation to achieve reliable classification
-                            performance.</p>
+                        <p>CNN-based handwritten character recognition system with preprocessing and model evaluation.</p>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>CNN</span>
@@ -154,12 +185,10 @@
                     </div>
                 </article>
 
-                <!-- Project 2 -->
                 <article class="project-card">
                     <div class="project-content">
                         <h3>Smart Wearable Navigation Device</h3>
-                        <p>Built an intelligent wearable system capable of real-time obstacle detection and navigation
-                            assistance for the visually impaired using computer vision techniques.</p>
+                        <p>Real-time obstacle detection and navigation assistance for visually impaired users.</p>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>Computer Vision</span>
@@ -168,12 +197,10 @@
                     </div>
                 </article>
 
-                <!-- Project 3 -->
                 <article class="project-card">
                     <div class="project-content">
                         <h3>Full-Stack Web Application <span class="badge">Ongoing</span></h3>
-                        <p>Developing a full-stack web application with authentication, database integration, and
-                            RESTful backend services focused on real-world problem solving.</p>
+                        <p>Authentication-based full-stack web application using RESTful backend services.</p>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>Flask/FastAPI</span>
@@ -183,12 +210,10 @@
                     </div>
                 </article>
 
-                <!-- Project 4 -->
                 <article class="project-card">
                     <div class="project-content">
                         <h3>House Price Prediction System</h3>
-                        <p>Implemented a machine learning model to predict house prices based on key features, including
-                            data preprocessing, model training, and performance evaluation.</p>
+                        <p>Machine learning model for house price prediction with feature engineering.</p>
                         <div class="tech-stack">
                             <span>Python</span>
                             <span>ML</span>
@@ -197,110 +222,40 @@
                         </div>
                     </div>
                 </article>
+
             </div>
         </div>
     </section>
 
-    <section id="research" class="research">
-        <div class="container">
-            <h2 class="section-title">Research</h2>
-            <div class="research-card">
-                <div class="research-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div class="research-content">
-                    <h3>Research on AI in Sustainable Aerospace Systems</h3>
-                    <p>Currently working on a research paper focused on the application of artificial intelligence
-                        techniques in sustainable aerospace systems, with an emphasis on efficiency optimization and
-                        environmental impact reduction. The paper is targeted for conference submission.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="split-section">
-                <div class="education-column">
-                    <h2 class="section-title">Education</h2>
-                    <div class="timeline-item">
-                        <span class="date">Expected 2027</span>
-                        <h3>Integrated M.Tech in Artificial Intelligence</h3>
-                        <p>VIT Bhopal University</p>
-                    </div>
-                </div>
-                <div class="experience-column">
-                    <h2 class="section-title">Experience</h2>
-                    <div class="timeline-item">
-                        <span class="date">Upcoming</span>
-                        <h3>Software Engineering Intern</h3>
-                        <p>Selected for an offline, full-time internship focusing on practical software development and
-                            real-world problem solving.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements" class="achievements">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
-            <div class="achievements-list">
-                <div class="achievement-item">
-                    <i class="fas fa-trophy"></i>
-                    <p>Participated in the Johns Hopkins Hackathon</p>
-                </div>
-                <div class="achievement-item">
-                    <i class="fas fa-code-branch"></i>
-                    <p>Active problem solver on LeetCode</p>
-                </div>
-                <div class="achievement-item">
-                    <i class="fas fa-chart-line"></i>
-                    <p>Experience in academic research and project exhibitions</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- CONTACT -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">I am actively seeking internship and entry-level software engineering opportunities.
-                Feel free to reach out for collaboration, projects, or opportunities.</p>
 
-            <div class="contact-form-container">
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message <i
-                            class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
+            <p class="contact-text">
+                I am actively seeking internship and entry-level software engineering opportunities.
+            </p>
 
             <div class="contact-links">
-                <a href="mailto:derindennymathew@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email
-                    Me</a>
-                <a href="https://www.linkedin.com/in/derin-denny-mathew" class="contact-btn"><i
-                        class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/Dipscodz" class="contact-btn"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:derindennymathew@gmail.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> Email Me
+                </a>
+
+                <a href="https://www.linkedin.com/in/derin-denny-mathew" class="contact-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+
+                <a href="https://github.com/Dipscodz" class="contact-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Derin Denny Mathew. All rights reserved. | <a href="messages.html"
-                    style="color: var(--text-secondary); opacity: 0.5;">Admin</a></p>
+            <p>&copy; 2025 Derin Denny Mathew. All rights reserved.</p>
         </div>
     </footer>
 
