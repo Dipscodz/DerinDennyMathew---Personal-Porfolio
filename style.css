@@ -800,7 +800,7 @@ button,
 
 /* Optional cursor text */
 .cursor-ring::after {
-    content: "VIEW";
+    content: "CLICK";
     font-size: 10px;
     font-weight: 600;
     color: var(--accent-primary);
