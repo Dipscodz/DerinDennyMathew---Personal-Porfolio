@@ -791,10 +791,10 @@ button,
 .cursor-active {
     width: 64px;
     height: 64px;
-    background: rgba(56, 189, 248, 0.12);
+    background: rgba(229, 4, 4, 0.12);
     border-radius: 14px;
     border: none;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+    box-shadow: 0 0 20px rgba(235, 5, 5, 0.35);
 }
 
 /* Optional cursor text */
