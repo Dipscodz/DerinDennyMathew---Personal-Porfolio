@@ -799,7 +799,7 @@ button,
 
 /* Optional cursor text */
 .cursor-ring::after {
-    content: "YEAH,GO FOR IT";
+    content: "NEE ARADA ITH NOKAAN";
     font-size: 10px;
     font-weight: 600;
     color: var(--accent-primary);
