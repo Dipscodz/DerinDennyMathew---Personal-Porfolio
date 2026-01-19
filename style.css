@@ -625,20 +625,14 @@ button,
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Trading Ticker */
-.trading-ticker {
+.ticker {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    font-family: 'Space Grotesk', monospace;
-    font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 4rem;
 }
 
 .ticker-item {
@@ -659,15 +653,6 @@ button,
 
 
 
-.trading-chart-container {
-    display: flex;
-    align-items: flex-end;
-    gap: 8px;
-    height: 100px;
-    margin-top: 2rem;
-    justify-content: center;
-    opacity: 0.8;
-}
 
 .chart-bar {
     width: 20px;
