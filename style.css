@@ -804,7 +804,7 @@ button,
     font-size: 10px;
     font-weight: 600;
     color: var(--accent-primary);
-    position: absolute;
+    position: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
